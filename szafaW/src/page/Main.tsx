@@ -1,7 +1,7 @@
 
 
 import { cn } from "../utils.ts";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/Navbar";
 import { AnimatedTooltipPreview } from "../page/People";
 

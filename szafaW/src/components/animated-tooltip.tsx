@@ -32,7 +32,7 @@ export const AnimatedTooltip = ({
     springConfig
   );
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const target = event.currentTarget; 
+    const target = event.currentTarget;
     const halfWidth = target.offsetWidth / 2;
 
     x.set(event.nativeEvent.offsetX - halfWidth);
@@ -40,7 +40,7 @@ export const AnimatedTooltip = ({
 
   return (
     <>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
           className="-mr-4  relative group"
           key={item.name}

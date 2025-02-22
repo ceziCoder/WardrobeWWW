@@ -5,7 +5,7 @@ import { Main } from "./page/Main";
 export const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename='/'>
         <Routes>
           <Route path="/" element={<Main />} />
         </Routes>

@@ -4,21 +4,21 @@ import { cn } from "../utils.ts";
 import  { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/Navbar";
 import { AnimatedTooltipPreview } from "../page/People";
-
+import { ThreeDCardDemo } from "../page/3dcard";
 
 export function Main({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
 
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn("relative top-10 inset-x-0 max-w-2xl  mx-auto z-50", className)}
     >
-      <Menu setActive={setActive}>
+      <Menu  setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
-          <HoveredLink to="/web-dev" onClick={() => setActive(null)}>Web Development</HoveredLink>
-          <HoveredLink to="/interface-design" onClick={() => setActive(null)}>Interface Design</HoveredLink>
-          <HoveredLink to="/seo" onClick={() => setActive(null)}>Search Engine Optimization</HoveredLink>
-          <HoveredLink to="/branding" onClick={() => setActive(null)}>Branding</HoveredLink>
+          <HoveredLink to="/web-dev" onClick={(e) => e.preventDefault()}>Web Development</HoveredLink>
+          <HoveredLink to="/interface-design" onClick={(e) => e.preventDefault()}>Interface Design</HoveredLink>
+          <HoveredLink to="/seo" onClick={(e) => e.preventDefault()}>Search Engine Optimization</HoveredLink>
+          <HoveredLink to="/branding" onClick={(e) => e.preventDefault}>Branding</HoveredLink>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Products">
           <div className="text-sm grid grid-cols-2 gap-10 p-4">
@@ -48,18 +48,21 @@ export function Main({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem setActive={setActive} active={active} item="Cena">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink to="/hobby" onClick={() => setActive(null)}>Hobby</HoveredLink>
-            <HoveredLink to="/individual" onClick={() => setActive(null)}>Individual</HoveredLink>
-            <HoveredLink to="/team" onClick={() => setActive(null)}>Team</HoveredLink>
-            <HoveredLink to="/enterprise" onClick={() => setActive(null)}>Enterprise</HoveredLink>
+            <HoveredLink to="/hobby" onClick={(e) => e.preventDefault()}>SzafaV1</HoveredLink>
+            <HoveredLink to="/individual" onClick={(e) => e.preventDefault()}>SzafaV2</HoveredLink>
+            <HoveredLink to="/team" onClick={(e) => e.preventDefault()}>SafaV3</HoveredLink>
+            <HoveredLink to="/enterprise" onClick={(e) => e.preventDefault()}>SzafaV4</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
       <div className="mt-5">
        {!active && < AnimatedTooltipPreview />}
-        </div>
-    </div>
+      </div>
+      <div className="">
+        {!active && <ThreeDCardDemo />}
+      </div>
+      </div>
   );
 }

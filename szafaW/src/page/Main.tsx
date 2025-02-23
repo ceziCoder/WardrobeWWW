@@ -60,7 +60,7 @@ export function Main({ className }: { className?: string }) {
       <div className="mt-5">
        {!active && < AnimatedTooltipPreview />}
       </div>
-      <div className="">
+      <div className="m-1">
         {!active && <ThreeDCardDemo />}
       </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import img7 from '../assets/s1.jpg'
-import React from "react";
+
 import { CardBody, CardContainer, CardItem } from "../components/3d-card";
 import { Link } from "react-router-dom";
 
